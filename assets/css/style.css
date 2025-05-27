@@ -1,0 +1,1677 @@
+.select2-container--bootstrap-5 .select2-selection {
+    min-height: 58px;
+    padding: 0.5rem;
+    border: 1px solid var(--input-border-color);
+    background: var(--input-bg-color);
+}
+
+.select2-container--bootstrap-5 .select2-selection--multiple .select2-selection__rendered {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+}
+
+.select2-container--bootstrap-5 .select2-selection--multiple .select2-search .select2-search__field {
+    color: var(--text-color);
+}
+
+/* ==========================================================================
+   Tema Değişkenleri (Tüm dosyalardan birleştirilmiş ve önceliklendirilmiştir)
+   ========================================================================== */
+:root {
+    --primary-hue: 260;
+    --secondary-hue: 330;
+    --accent-hue: 200;
+    /* Mavi tonu */
+
+    /* Light Mode Base Gradients & Animated BG */
+    --bg-gradient-start: hsl(220, 50%, 95%);
+    --bg-gradient-end: hsl(200, 50%, 90%);
+    --bg-animated-1: hsl(var(--primary-hue), 70%, 60%);
+    --bg-animated-2: hsl(var(--secondary-hue), 70%, 65%);
+    --bg-animated-3: hsl(var(--primary-hue), 70%, 55%);
+
+    /* Card Backgrounds (auth vs general content) */
+    --card-bg: rgba(255, 255, 255, 0.85);
+    /* Auth-card, registration-card için */
+    --content-card-bg: rgba(255, 255, 255, 0.95);
+    /* content-card, article-detail-card, etc. için */
+
+    /* Shadows */
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    /* auth-card gölgesi */
+    --content-card-shadow: rgba(0, 0, 0, 0.07);
+    /* Genel içerik kartları gölgesi */
+
+    /* Text Colors */
+    --text-color: #212529;
+    --text-muted-color: #6c757d;
+
+    /* Input Fields */
+    --input-bg: rgba(255, 255, 255, 0.7);
+    /* Varsayılan/Auth input arkaplanı */
+    --form-section-input-bg: rgba(255, 255, 255, 0.85);
+    /* Profil sayfası form bölümleri için */
+    --input-border: rgba(0, 0, 0, 0.15);
+    --input-focus-border: hsl(var(--primary-hue), 80%, 70%);
+    --input-focus-shadow: hsla(var(--primary-hue), 80%, 70%, 0.25);
+
+    /* Accent & Link Colors */
+    --accent-color-1: hsl(var(--primary-hue), 65%, 55%);
+    --accent-color-2: hsl(var(--secondary-hue), 70%, 60%);
+    --link-color: var(--accent-color-1);
+    --link-hover-color: var(--accent-color-2);
+
+    /* Navbar */
+    --navbar-bg: rgba(255, 255, 255, 0.75);
+    --navbar-link-color: var(--text-color);
+    --navbar-link-hover-bg: hsla(var(--accent-hue), 70%, 80%, 0.35);
+    --navbar-brand-color: var(--accent-color-1);
+
+    /* Article Cards */
+    --article-card-bg: white;
+    --article-card-border: hsl(var(--accent-hue), 60%, 75%);
+    --article-card-shadow-hover: rgba(0, 0, 0, 0.12);
+    --article-card-shared-border: hsl(120, 50%, 60%);
+    /* Paylaşılan makaleler için yeşil tonu */
+
+    /* Badges */
+    --badge-soft-bg-alpha: 0.15;
+    /* Yumuşak badge'ler için alpha */
+
+    /* Alerts */
+    --danger-bg: #f8d7da;
+    --danger-text: #721c24;
+    --danger-border: #f5c6cb;
+    --success-bg: #d1e7dd;
+    --success-text: #0f5132;
+    --success-border: #badbcc;
+
+    /* Theme Toggle & Close Buttons */
+    --theme-btn-bg: white;
+    --theme-btn-text: var(--text-color);
+    --btn-close-filter: none;
+    /* Kapatma butonları, sosyal ikon filtresi için */
+
+    /* Profile & Avatar */
+    --avatar-border: var(--accent-color-1);
+    --avatar-icon-bg: rgba(255, 255, 255, 0.9);
+    --avatar-icon-color: var(--text-color);
+    --progress-bar-bg: #e9ecef;
+
+    /* Makale Detay / Index specific */
+    --section-divider-color: var(--input-border);
+    --metadata-label-color: var(--text-muted-color);
+    --metadata-value-color: var(--text-color);
+    --pdf-viewer-bg: hsl(0, 0%, 90%);
+    --user-pill-bg: hsla(120, 60%, 70%, 0.2);
+    /* Paylaşım yapılan kullanıcı pilleri */
+    --user-pill-text: hsl(120, 50%, 30%);
+    --user-pill-remove-hover-bg: hsla(0, 70%, 60%, 0.8);
+}
+
+[data-theme="dark"] {
+    /* Dark Mode Base Gradients & Animated BG */
+    --bg-gradient-start: hsl(225, 20%, 10%);
+    --bg-gradient-end: hsl(230, 25%, 7%);
+    --bg-animated-1: hsl(var(--primary-hue), 60%, 22%);
+    --bg-animated-2: hsl(var(--secondary-hue), 60%, 27%);
+    --bg-animated-3: hsl(var(--primary-hue), 60%, 18%);
+
+    /* Card Backgrounds */
+    --card-bg: rgba(30, 30, 55, 0.75);
+    --content-card-bg: rgba(35, 35, 60, 0.85);
+
+    /* Shadows */
+    --card-shadow: rgba(0, 0, 0, 0.3);
+    --content-card-shadow: rgba(0, 0, 0, 0.3);
+
+    /* Text Colors */
+    --text-color: #e8eaed;
+    --text-muted-color: #9aa0a6;
+
+    /* Input Fields */
+    --input-bg: rgba(255, 255, 255, 0.08);
+    --form-section-input-bg: rgba(255, 255, 255, 0.07);
+    --input-border: rgba(255, 255, 255, 0.15);
+    --input-focus-border: hsl(var(--secondary-hue), 70%, 65%);
+    --input-focus-shadow: hsla(var(--secondary-hue), 70%, 65%, 0.3);
+
+    /* Accent & Link Colors */
+    --accent-color-1: hsl(var(--primary-hue), 70%, 65%);
+    --accent-color-2: hsl(var(--secondary-hue), 75%, 70%);
+    --link-color: var(--accent-color-2);
+    --link-hover-color: #fff;
+
+    /* Navbar */
+    --navbar-bg: rgba(25, 25, 45, 0.8);
+    --navbar-link-color: var(--text-muted-color);
+    --navbar-link-hover-bg: hsla(var(--accent-hue), 50%, 45%, 0.4);
+    --navbar-brand-color: var(--accent-color-2);
+
+    /* Article Cards */
+    --article-card-bg: rgba(40, 40, 65, 0.9);
+    --article-card-border: hsl(var(--accent-hue), 50%, 50%);
+    --article-card-shadow-hover: rgba(0, 0, 0, 0.2);
+    --article-card-shared-border: hsl(120, 40%, 45%);
+
+    /* Badges */
+    --badge-soft-bg-alpha: 0.25;
+
+    /* Alerts */
+    --danger-bg: #5c1a1f;
+    --danger-text: #f8d7da;
+    --danger-border: #8c2a32;
+    --success-bg: #143623;
+    --success-text: #a3cfbb;
+    --success-border: #2a6443;
+
+    /* Theme Toggle & Close Buttons */
+    --theme-btn-bg: var(--content-card-bg);
+    --theme-btn-text: var(--text-color);
+    --btn-close-filter: invert(1) grayscale(100%) brightness(200%);
+
+    /* Profile & Avatar */
+    --avatar-border: var(--accent-color-2);
+    --avatar-icon-bg: rgba(40, 40, 60, 0.9);
+    --avatar-icon-color: var(--text-color);
+    --progress-bar-bg: rgba(255, 255, 255, 0.1);
+
+    /* Makale Detay / Index specific */
+    --section-divider-color: rgba(255, 255, 255, 0.1);
+    --metadata-label-color: #888da8;
+    --metadata-value-color: var(--text-color);
+    --pdf-viewer-bg: hsl(230, 15%, 25%);
+    --user-pill-bg: hsla(var(--accent-hue), 40%, 30%, 0.4);
+    --user-pill-text: hsl(var(--accent-hue), 50%, 70%);
+    --user-pill-remove-hover-bg: hsla(0, 60%, 50%, 0.8);
+}
+
+/* ==========================================================================
+   Genel Sayfa Stilleri
+   ========================================================================== */
+
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+#main-bg {
+    background: linear-gradient(-45deg, var(--bg-gradient-start), var(--bg-gradient-end), var(--bg-animated-1), var(--bg-animated-2), var(--bg-animated-3));
+    background-size: 400% 400%;
+    animation: gradientBG 25s ease infinite;
+    min-height: 100vh;
+    padding: 1rem;
+    /* Genel padding, navbar yüksekliği aşağıda ayrıca ayarlanacak */
+    padding-top: 80px;
+    /* Navbar için boşluk (navbar fixed ise) */
+    padding-bottom: 2rem;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* ==========================================================================
+   Animasyonlar
+   ========================================================================== */
+@keyframes fadeInScaleUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+    }
+
+    /* Ufak farklılıklar vardı, birini seçtim */
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-down {
+    opacity: 0;
+    animation: fadeInDown 0.6s ease-out forwards;
+}
+
+.animate-fade-in-up {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* ==========================================================================
+   Navbar Stilleri
+   ========================================================================== */
+.navbar-custom {
+    background-color: var(--navbar-bg);
+    backdrop-filter: blur(10px) saturate(180%);
+    -webkit-backdrop-filter: blur(10px) saturate(180%);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    /* index.php versiyonundaki daha yumuşak gölge */
+    padding: 0.8rem 1.5rem;
+    transition: background-color 0.5s ease;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+}
+
+.navbar-brand-custom {
+    color: var(--navbar-brand-color) !important;
+    font-weight: 600;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand-custom img {
+    width: 35px;
+    height: 35px;
+    margin-right: 0.7rem;
+    filter: drop-shadow(0 2px 3px hsla(var(--primary-hue), 50%, 50%, 0.3));
+}
+
+.nav-link-custom {
+    color: var(--navbar-link-color) !important;
+    font-weight: 500;
+    padding: 0.6rem 1rem !important;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link-custom:hover,
+.nav-link-custom.active {
+    background-color: var(--navbar-link-hover-bg);
+    color: var(--accent-color-1) !important;
+}
+
+[data-theme="dark"] .nav-link-custom:hover,
+[data-theme="dark"] .nav-link-custom.active {
+    color: var(--accent-color-2) !important;
+}
+
+.profile-dropdown .dropdown-toggle img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent-color-1);
+    /* Avatar border ile aynı tema değişkenini kullanabilir */
+    margin-right: 0.5rem;
+}
+
+[data-theme="dark"] .profile-dropdown .dropdown-toggle img {
+    border-color: var(--accent-color-2);
+}
+
+.profile-dropdown .dropdown-menu {
+    background-color: var(--input-bg);
+    /* Profildeki tanım */
+    border: 1px solid var(--input-border);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    /* index.php versiyonu */
+    border-radius: 10px;
+    padding: 0.5rem 0;
+}
+
+.profile-dropdown .dropdown-item {
+    color: var(--text-color);
+    padding: 0.6rem 1.2rem;
+    transition: background-color 0.2s ease;
+}
+
+.profile-dropdown .dropdown-item:hover {
+    background-color: var(--navbar-link-hover-bg);
+}
+
+.profile-dropdown .dropdown-item i {
+    margin-right: 0.7rem;
+    color: var(--accent-color-1);
+}
+
+[data-theme="dark"] .profile-dropdown .dropdown-item i {
+    color: var(--accent-color-2);
+}
+
+/* ==========================================================================
+   Tema Değiştirme Butonu
+   ========================================================================== */
+.theme-toggle-button {
+    position: fixed;
+    top: 1rem;
+    /* Navbar yüksekliğine göre ayarlanabilir */
+    right: 1rem;
+    z-index: 1050;
+    /* Navbar'ın üzerinde olması için */
+    background-color: var(--theme-btn-bg);
+    color: var(--theme-btn-text);
+    border: 1px solid var(--input-border);
+    border-radius: 50px;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle-button:hover {
+    background-color: var(--accent-color-1);
+    color: white;
+    border-color: var(--accent-color-1);
+}
+
+[data-theme="dark"] .theme-toggle-button:hover {
+    background-color: var(--accent-color-2);
+    border-color: var(--accent-color-2);
+}
+
+.theme-toggle-button i {
+    margin-right: 0.5rem;
+}
+
+/* ==========================================================================
+   Genel Form Elemanları (Floating Labels, Select2, vb.)
+   ========================================================================== */
+.text-muted-color {
+    /* Helper class from auth */
+    color: var(--text-muted-color) !important;
+}
+
+.form-floating>.form-control,
+.form-floating>.form-select {
+    height: calc(3.8rem + 2px);
+    background-color: var(--input-bg);
+    /* Varsayılan. --form-section-input-bg profil.php'deki gibi bir section'da ezilebilir. */
+    border: 1px solid var(--input-border);
+    color: var(--text-color);
+    border-radius: 10px;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out, background-color 0.3s ease;
+}
+
+.form-floating>.form-control {
+    padding: 1.2rem 1rem;
+    /* register.php'den */
+}
+
+.form-floating>textarea.form-control {
+    /* makaleYukleme.php */
+    height: auto;
+    min-height: 120px;
+}
+
+.form-floating>.form-select {
+    /* profil.php'den düzenlenmiş */
+    padding: 1rem 1rem;
+    padding-top: 1.6rem;
+    padding-bottom: .6rem;
+}
+
+.form-floating>label {
+    /* profil.php'den düzenlenmiş, ikonlu */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 1.2rem 1rem;
+    /* register.php'den */
+    pointer-events: none;
+    border: 1px solid transparent;
+    transform-origin: 0 0;
+    transition: opacity .1s ease-in-out, transform .1s ease-in-out, background-color .1s ease-in-out;
+    color: var(--text-muted-color);
+    display: flex;
+    align-items: center;
+}
+
+.form-floating>label i {
+    /* profil.php'den */
+    margin-right: 0.5rem;
+}
+
+.form-floating>.form-control:focus~label,
+.form-floating>.form-control:not(:placeholder-shown)~label,
+.form-floating>.form-select.has-value~label,
+/* JS ile .has-value class'ı eklenecek */
+.form-floating>.form-select:focus~label {
+    /* profil.php'den düzenlenmiş */
+    opacity: .5;
+    transform: scale(.85) translateY(-.75rem) translateX(.15rem);
+    background-color: var(--input-bg);
+    /* Arkaplanı aldığı input ile aynı olmalı */
+    padding-left: .5rem;
+    padding-right: .5rem;
+    height: 5px;
+    width: auto;
+    border-radius: 5px;
+}
+
+/* --form-section-input-bg kullanan bölümler için label arkaplanını ayarla */
+.form-section .form-floating>.form-control:focus~label,
+.form-section .form-floating>.form-control:not(:placeholder-shown)~label,
+.form-section .form-floating>.form-select.has-value~label,
+.form-section .form-floating>.form-select:focus~label {
+    background-color: var(--form-section-input-bg);
+}
+
+
+.form-floating>.form-control:-webkit-autofill,
+.form-floating>.form-control:-webkit-autofill:hover,
+.form-floating>.form-control:-webkit-autofill:focus,
+.form-floating>.form-control:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px var(--input-bg) inset !important;
+    /* Contextual --input-bg alır */
+    -webkit-text-fill-color: var(--text-color) !important;
+    caret-color: var(--text-color);
+    border-radius: 10px;
+}
+
+.form-floating>.form-control:focus,
+.form-floating>.form-select:focus {
+    /* background-color: var(--input-bg); /* Odaklandığında da aynı kalabilir veya hafif değişebilir */
+    border-color: var(--input-focus-border);
+    box-shadow: 0 0 0 0.2rem var(--input-focus-shadow);
+    /* .25rem bazı yerlerde, .2rem diğerlerinde. .2rem daha standart */
+    color: var(--text-color);
+}
+
+.password-toggle-btn {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--text-muted-color);
+    cursor: pointer;
+    padding: 0.3rem;
+    line-height: 1;
+    z-index: 3;
+    /* Floating label üzerine çıkması için */
+}
+
+.password-toggle-btn i {
+    font-size: 1.1rem;
+}
+
+.password-strength-indicator {
+    /* register.php & profil.php */
+    margin-top: 0.5rem;
+}
+
+.password-strength-indicator .progress {
+    background-color: var(--progress-bar-bg);
+    height: 6px;
+    border-radius: 3px;
+}
+
+.password-strength-indicator .progress-bar {
+    transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* Select2 (makaleYukleme.php) */
+.select2-container--bootstrap-5 .select2-selection {
+    background-color: var(--input-bg) !important;
+    /* Veya --form-section-input-bg duruma göre */
+    border: 1px solid var(--input-border) !important;
+    color: var(--text-color) !important;
+    border-radius: 10px !important;
+    height: calc(3.8rem + 2px) !important;
+    /* .form-floating ile aynı yükseklik */
+    padding: 0.8rem 1rem !important;
+    /* Dikey hizalama için ayar gerekebilir */
+    display: flex;
+    /* İçeriği dikey ortalamak için */
+    align-items: center;
+    /* İçeriği dikey ortalamak için */
+}
+
+.select2-container--bootstrap-5 .select2-selection--multiple .select2-selection__choice {
+    background-color: var(--accent-color-1) !important;
+    color: white !important;
+    border-color: var(--accent-color-1) !important;
+    padding: 0.25rem 0.5rem;
+    margin-top: 0.35rem;
+    /* Dikey hizalama için ayar */
+}
+
+.select2-container--bootstrap-5 .select2-selection--multiple .select2-selection__choice__remove {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.select2-container--bootstrap-5 .select2-selection--multiple .select2-selection__choice__remove:hover {
+    color: white !important;
+}
+
+.select2-container--bootstrap-5 .select2-dropdown {
+    background-color: var(--content-card-bg) !important;
+    /* Dropdown'ın açıldığı kartın arkaplanı */
+    border: 1px solid var(--input-border) !important;
+    color: var(--text-color) !important;
+    border-radius: 10px;
+}
+
+.select2-container--bootstrap-5 .select2-results__option--highlighted {
+    background-color: var(--navbar-link-hover-bg) !important;
+    /* Temayla uyumlu hover */
+    color: var(--link-color) !important;
+}
+
+.select2-container--bootstrap-5 .select2-search--dropdown .select2-search__field {
+    background-color: var(--input-bg) !important;
+    color: var(--text-color) !important;
+    border: 1px solid var(--input-border) !important;
+    border-radius: 8px;
+}
+
+.select2-container--bootstrap-5 .select2-selection__rendered {
+    /* Seçilen metin rengi */
+    color: var(--text-color) !important;
+    line-height: normal;
+    /* Önemli */
+}
+
+[data-theme="dark"] .select2-container--bootstrap-5 .select2-selection--multiple .select2-selection__choice {
+    background-color: var(--accent-color-2) !important;
+    border-color: var(--accent-color-2) !important;
+}
+
+/* ==========================================================================
+   Buton Stilleri
+   ========================================================================== */
+.btn-action,
+.btn-auth,
+.btn-register,
+.btn-action-filled {
+    /* Gradient butonlar için ortak temel */
+    border: none;
+    padding: 0.85rem 1.5rem;
+    /* .btn-auth temel alındı, diğerleri benzerdi */
+    border-radius: 50px;
+    font-weight: 600;
+    /* .btn-auth/.btn-register */
+    letter-spacing: 0.5px;
+    /* .btn-auth/.btn-register */
+    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.btn-action i,
+.btn-auth i,
+.btn-register i,
+.btn-action-filled i {
+    /* Buton içindeki ikonlar */
+    margin-right: 0.5rem;
+}
+
+/* Farklı gradient butonlar için spesifik arkaplanlar ve ince ayarlar */
+.btn-action {
+    /* index.php */
+    background: linear-gradient(45deg, var(--accent-color-1), var(--accent-color-2));
+    padding: 0.6rem 1.2rem;
+    /* Biraz daha küçüktü */
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Kendine has gölgesi vardı, korundu */
+}
+
+.btn-action:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 4px 12px hsla(var(--primary-hue), 50%, 50%, 0.25);
+    /* Kendine has hover gölgesi */
+}
+
+.btn-auth,
+.btn-register {
+    /* login.php, register.php */
+    background: linear-gradient(45deg, var(--accent-color-1), var(--accent-color-2));
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.btn-auth:hover,
+.btn-auth:focus,
+.btn-register:hover,
+.btn-register:focus {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 6px 20px hsla(var(--primary-hue), 50%, 50%, 0.3);
+    background: linear-gradient(45deg, var(--accent-color-2), var(--accent-color-1));
+    color: white;
+}
+
+.btn-auth:disabled,
+.btn-register:disabled {
+    /* sifreSifirla & register */
+    background: var(--text-muted-color);
+    opacity: 0.65;
+    transform: none;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+
+.btn-action-filled {
+    /* makaleDetay.php, yukleme.php, profil.php */
+    background: linear-gradient(45deg, var(--accent-color-1), var(--accent-color-2));
+    padding: 0.75rem 1.5rem;
+    /* profil.php tanımı */
+    font-weight: 500;
+    /* profil.php tanımı */
+}
+
+.btn-action-filled:hover {
+    /* makaleDetay & profil hover birleşimi */
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px hsla(var(--primary-hue), 50%, 50%, 0.2);
+}
+
+
+.btn-outline-custom {
+    /* makaleDetay.php, yukleme.php, profil.php */
+    border: 1px solid var(--link-color);
+    /* makaleDetay tanımı öncelikli */
+    color: var(--link-color);
+    padding: 0.75rem 1.5rem;
+    /* profil.php tanımı */
+    border-radius: 50px;
+    /* profil.php tanımı */
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-custom:hover {
+    background-color: var(--link-color);
+    /* makaleDetay tanımı öncelikli */
+    color: white;
+}
+
+/* makaleYukleme.php & profil.php'deki .text-muted-color versiyonu için özel bir sınıf gerekebilir,
+   ya da hangi durumda kullanılacağına göre bu temel stil ayarlanabilir. Şimdilik link-color'ı temel alıyorum. */
+
+
+/* ==========================================================================
+   Kart Stilleri (Farklı türler için)
+   ========================================================================== */
+
+/* Genel İçerik Kartı (index.php, profil.php - profile-page-card, vb.) */
+.content-card,
+.article-detail-card,
+.upload-form-card,
+.profile-page-card {
+    background-color: var(--content-card-bg);
+    backdrop-filter: blur(12px) saturate(160%);
+    /* index.php'deki .content-card temel alındı, diğerleri benzer */
+    -webkit-backdrop-filter: blur(12px) saturate(160%);
+    border-radius: 15px;
+    /* .content-card */
+    /* diğerleri 18px diyor, 15px daha genel */
+    padding: 2rem 2.5rem;
+    /* article-detail, upload-form, profile-page ortak */
+    box-shadow: 0 10px 30px var(--content-card-shadow);
+    /* .content-card (index.php'deki shadow değişkenini alır) */
+    border: 1px solid var(--input-border);
+    animation: fadeInScaleUp 0.7s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    margin-top: 1.5rem;
+    /* .content-card (index.php) */
+    transition: background-color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* .content-card özelinde padding (index.php) */
+.content-card {
+    padding: 1.5rem 2rem;
+}
+
+.content-card-header h3 {
+    /* index.php */
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+
+/* Auth Kartları (register.php, login.php, vb.) */
+.auth-card,
+.registration-card {
+    background-color: var(--card-bg);
+    /* auth için özel --card-bg */
+    backdrop-filter: blur(18px) saturate(150%);
+    -webkit-backdrop-filter: blur(18px) saturate(150%);
+    border-radius: 20px;
+    padding: 2rem 2.5rem;
+    box-shadow: 0 15px 35px var(--card-shadow);
+    /* auth için özel --card-shadow */
+    max-width: 550px;
+    /* login/verify gibi kartlar için */
+    width: 100%;
+    border: 1px solid var(--input-border);
+    animation: fadeInScaleUp 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    transition: background-color 0.5s ease, border-color 0.5s ease;
+    margin-left: auto;
+    /* Ortalama için */
+    margin-right: auto;
+    /* Ortalama için */
+}
+
+.registration-card {
+    /* register.php için daha geniş olabilir */
+    max-width: 650px;
+}
+
+.auth-card h2,
+.registration-card h2 {
+    font-weight: 600;
+    color: var(--text-color);
+    letter-spacing: 0.5px;
+    margin-bottom: 1.5rem;
+    /* Tutarlılık için */
+}
+
+.auth-card-logo {
+    /* login.php */
+    max-width: 70px;
+    margin-bottom: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.auth-card-icon {
+    /* verify-email, sifreUnuttum, sifreSifirla */
+    font-size: 3rem;
+    color: var(--accent-color-1);
+    margin-bottom: 0.5rem;
+    display: block;
+    /* text-align:center ile çalışması için */
+}
+
+[data-theme="dark"] .auth-card-icon {
+    color: var(--accent-color-2);
+}
+
+
+/* Makale Kartları (index.php) */
+.article-card {
+    background-color: var(--article-card-bg);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid var(--input-border);
+    border-left: 5px solid var(--article-card-border);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.article-card.shared {
+    border-left-color: var(--article-card-shared-border);
+}
+
+.article-card:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 6px 20px var(--article-card-shadow-hover);
+    cursor: pointer;
+}
+
+.article-card h5 {
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.4rem;
+    transition: color 0.3s ease;
+}
+
+.article-card:hover h5 {
+    color: var(--link-color);
+}
+
+[data-theme="dark"] .article-card:hover h5 {
+    color: var(--link-hover-color);
+}
+
+.article-card .text-muted {
+    font-size: 0.85rem;
+}
+
+.article-card .badge {
+    font-size: 0.75rem;
+    padding: 0.4em 0.7em;
+    font-weight: 500;
+}
+
+.article-card-footer {
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--input-border);
+    font-size: 0.8rem;
+    color: var(--text-muted-color);
+}
+
+.article-actions a {
+    color: var(--text-muted-color);
+    text-decoration: none;
+    margin-right: 1rem;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.article-actions a:hover {
+    color: var(--link-color);
+}
+
+[data-theme="dark"] .article-actions a:hover {
+    color: var(--link-hover-color);
+}
+
+.article-actions a i {
+    margin-right: 0.3rem;
+}
+
+
+/* Not Kartı (makaleDetay.php) */
+.note-card {
+    background-color: var(--input-bg);
+    /* Tema değişkeni notun arkaplanı için uygun */
+    border: 1px solid var(--input-border);
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.note-content {
+    margin-bottom: 0.5rem;
+}
+
+.note-meta {
+    font-size: 0.8rem;
+    color: var(--text-muted-color);
+}
+
+.note-meta .timestamp {
+    margin-right: 1rem;
+}
+
+.note-actions a {
+    font-size: 0.85rem;
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.note-actions a:hover {
+    text-decoration: underline;
+}
+
+
+/* ==========================================================================
+   Spesifik Bileşenler
+   ========================================================================== */
+
+/* Avatar Yükleme (profil.php & register.php - profil.php sürümü temel alındı) */
+.avatar-section {
+    margin-bottom: 2rem;
+}
+
+/* profil.php */
+.avatar-upload {
+    position: relative;
+    width: 160px;
+    /* profil.php */
+    height: 160px;
+    /* profil.php */
+    cursor: pointer;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid var(--avatar-border);
+    /* profil.php */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    /* profil.php */
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.avatar-upload:hover {
+    transform: scale(1.05);
+}
+
+.avatar-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.avatar-edit-icon {
+    position: absolute;
+    bottom: 5px;
+    /* profil.php */
+    right: 5px;
+    /* profil.php */
+    background: var(--avatar-icon-bg);
+    color: var(--avatar-icon-color);
+    border-radius: 50%;
+    padding: 10px;
+    /* profil.php */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    /* profil.php */
+    line-height: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.avatar-edit-icon i {
+    font-size: 1.3rem;
+}
+
+/* profil.php */
+
+
+/* Auth Sayfaları İçin Linkler ve Bölücüler */
+.auth-link {
+    /* login.php, register.php, vb. */
+    color: var(--link-color);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.auth-link:hover {
+    color: var(--link-hover-color);
+    text-decoration: underline;
+}
+
+.divider {
+    /* login.php */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 1.5rem 0;
+    color: var(--text-muted-color);
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--input-border);
+}
+
+.divider:not(:empty)::before {
+    margin-right: .25em;
+}
+
+.divider:not(:empty)::after {
+    margin-left: .25em;
+}
+
+.social-login-btn {
+    /* login.php */
+    background-color: var(--input-bg) !important;
+    border: 1px solid var(--input-border) !important;
+    color: var(--text-color) !important;
+    border-radius: 50px !important;
+    width: 50px;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.social-login-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.social-login-btn img {
+    width: 24px;
+    filter: var(--btn-close-filter);
+    /* İkonları tema için ayarlar */
+}
+
+
+/* Uyarı Mesajları (Alerts) */
+.alert-custom-danger,
+.alert-custom-success {
+    /* Genel özel alertler */
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    /* Tutarlılık için Bootstrap gibi */
+    margin-bottom: 1rem;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.alert-custom-danger {
+    background-color: var(--danger-bg);
+    color: var(--danger-text);
+    border-color: var(--danger-border);
+}
+
+.alert-custom-success {
+    background-color: var(--success-bg);
+    color: var(--success-text);
+    border-color: var(--success-border);
+}
+
+/* sifreSifirla.php deki .alert-link */
+.alert-custom-danger .alert-link,
+.alert-custom-success .alert-link {
+    font-weight: bold;
+}
+
+.alert-custom-danger .alert-link {
+    color: var(--danger-text);
+}
+
+.alert-custom-success .alert-link {
+    color: var(--success-text);
+}
+
+
+/* Yumuşak Badge'ler (index.php) */
+.bg-success-soft {
+    background-color: hsla(134, 61%, 41%, var(--badge-soft-bg-alpha));
+}
+
+.text-success {
+    color: hsl(134, 61%, 31%) !important;
+}
+
+[data-theme="dark"] .text-success {
+    color: hsl(134, 50%, 70%) !important;
+}
+
+.bg-warning-soft {
+    background-color: hsla(45, 100%, 51%, var(--badge-soft-bg-alpha));
+}
+
+.text-warning {
+    color: hsl(38, 82%, 48%) !important;
+}
+
+[data-theme="dark"] .text-warning {
+    color: hsl(45, 100%, 75%) !important;
+}
+
+.bg-info-soft {
+    background-color: hsla(188, 78%, 41%, var(--badge-soft-bg-alpha));
+}
+
+.text-info {
+    color: hsl(188, 68%, 31%) !important;
+}
+
+[data-theme="dark"] .text-info {
+    color: hsl(188, 70%, 70%) !important;
+}
+
+.bg-primary-soft {
+    background-color: hsla(var(--primary-hue), 70%, 60%, var(--badge-soft-bg-alpha));
+}
+
+.text-primary-own {
+    color: var(--accent-color-1) !important;
+}
+
+/* Dark mode'da accent-color-1 zaten açık, tekrar tanımlamaya gerek yok gibi */
+
+.bg-secondary-soft {
+    background-color: hsla(var(--secondary-hue), 70%, 65%, var(--badge-soft-bg-alpha));
+}
+
+.text-secondary-shared {
+    color: hsl(var(--secondary-hue), 60%, 45%) !important;
+}
+
+[data-theme="dark"] .text-secondary-shared {
+    color: hsl(var(--secondary-hue), 65%, 70%) !important;
+}
+
+
+/* Makale Detay Sayfası Stilleri (makaleDetay.php) */
+.article-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--text-color);
+    line-height: 1.3;
+    margin-bottom: 0.75rem;
+}
+
+.article-metadata-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.metadata-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.metadata-item .label {
+    font-weight: 500;
+    color: var(--metadata-label-color);
+    margin-bottom: 0.25rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.metadata-item .value {
+    font-weight: 400;
+    color: var(--metadata-value-color);
+}
+
+.metadata-item .value a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.metadata-item .value a:hover {
+    text-decoration: underline;
+}
+
+[data-theme="dark"] .metadata-item .value a {
+    color: var(--link-hover-color);
+}
+
+
+.section-title {
+    /* makaleDetay.php & yukleme.php (form-section-title) */
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent-color-1);
+    display: inline-block;
+}
+
+[data-theme="dark"] .section-title {
+    border-bottom-color: var(--accent-color-2);
+}
+
+/* .form-section-title (makaleYukleme.php) daha spesifik padding/margin istiyor olabilir. */
+/* profil.php'deki form-section-title da var */
+.form-section .form-section-title {
+    /* Profil */
+    border-bottom: 1px solid var(--input-border);
+    margin-bottom: 1.5rem;
+    /* profil & yukleme */
+    padding-bottom: 0.75rem;
+    /* yukleme */
+}
+
+.section-content {
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+.section-content p {
+    margin-bottom: 1rem;
+}
+
+.pdf-viewer-placeholder {
+    height: 600px;
+    background-color: var(--pdf-viewer-bg);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    /* İkon ve metni alt alta almak için */
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted-color);
+    border: 1px solid var(--input-border);
+    text-align: center;
+}
+
+.pdf-viewer-placeholder i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+
+/* Paylaşım Yönetimi (makaleDetay.php) */
+.user-pill {
+    background-color: var(--user-pill-bg);
+    color: var(--user-pill-text);
+    padding: 0.4rem 0.8rem;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    margin: 0.25rem;
+    font-size: 0.85rem;
+}
+
+.user-pill .permission {
+    font-size: 0.75rem;
+    opacity: 0.8;
+    margin-left: 0.3rem;
+    font-style: italic;
+}
+
+.user-pill .remove-user-btn {
+    border: none;
+    background: transparent;
+    color: var(--user-pill-text);
+    margin-left: 0.5rem;
+    padding: 0 0.2rem;
+    opacity: 0.7;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.user-pill .remove-user-btn:hover {
+    opacity: 1;
+    color: var(--user-pill-remove-hover-bg);
+}
+
+[data-theme="dark"] .user-pill .remove-user-btn {
+    color: var(--user-pill-text);
+    /* Koyu temada da ana metin rengi */
+}
+
+[data-theme="dark"] .user-pill .remove-user-btn:hover {
+    color: hsl(0, 70%, 70%);
+    /* Koyu temada hover'da daha belirgin kırmızı */
+}
+
+.search-container .input-group .form-control {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.search-container .input-group .btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.search-results {
+    position: absolute;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    background: var(--content-card-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: none;
+    margin-top: -1px;
+    /* input border'ını kapatmasın diye */
+}
+
+.search-item {
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    color: var(--text-color);
+}
+
+.search-item:hover {
+    background: var(--navbar-link-hover-bg);
+}
+
+/* Tablar (makaleDetay.php) */
+.nav-tabs-custom .nav-link {
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: var(--text-muted-color);
+    font-weight: 500;
+    padding: 0.8rem 1rem;
+    transition: color 0.3s ease, border-color 0.3s ease;
+    background: transparent;
+    /* Bootstrap'in default arkaplanını sıfırla */
+}
+
+.nav-tabs-custom .nav-link.active {
+    color: var(--link-color);
+    border-bottom-color: var(--link-color);
+    background: transparent;
+}
+
+[data-theme="dark"] .nav-tabs-custom .nav-link.active {
+    color: var(--link-hover-color);
+    border-bottom-color: var(--link-hover-color);
+}
+
+.nav-tabs-custom {
+    border-bottom: 1px solid var(--input-border);
+    margin-bottom: 1.5rem;
+}
+
+
+/* Makale Yükleme Sayfası (yukleme.php) */
+.file-upload-area {
+    border: 3px dashed var(--input-border);
+    border-radius: 15px;
+    padding: 2.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: var(--form-section-input-bg);
+    /* form arkaplanıyla uyumlu */
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    /* Form elemanları arası boşluk */
+}
+
+.file-upload-area.dragover {
+    border-color: var(--accent-color-1);
+    background-color: hsla(var(--primary-hue), 70%, 60%, 0.1);
+    transform: scale(1.02);
+}
+
+[data-theme="dark"] .file-upload-area.dragover {
+    border-color: var(--accent-color-2);
+    background-color: hsla(var(--primary-hue), 70%, 50%, 0.15);
+}
+
+.file-upload-area i {
+    font-size: 3.5rem;
+    color: var(--accent-color-1);
+    margin-bottom: 1rem;
+}
+
+[data-theme="dark"] .file-upload-area i {
+    color: var(--accent-color-2);
+}
+
+.file-upload-area h5 {
+    color: var(--text-color);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.file-upload-area p.small {
+    color: var(--text-muted-color);
+}
+
+.file-preview-badge {
+    background-color: var(--accent-color-1) !important;
+    color: white !important;
+    font-size: 0.9rem;
+    padding: 0.5em 0.8em !important;
+}
+
+[data-theme="dark"] .file-preview-badge {
+    background-color: var(--accent-color-2) !important;
+}
+
+.file-preview-item {
+    background-color: var(--input-bg);
+    /* Yükleme alanı gibi */
+    border: 1px solid var(--input-border);
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toggle-input-type {
+    /* yukleme.php DOI/Başlık değiştirme */
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.toggle-input-type .btn {
+    background-color: var(--input-bg);
+    color: var(--text-muted-color);
+    border: 1px solid var(--input-border);
+    border-radius: 50px;
+    padding: 0.6rem 1.2rem;
+    margin: 0 0.3rem;
+    font-weight: 500;
+}
+
+.toggle-input-type .btn.active {
+    background: linear-gradient(45deg, var(--accent-color-1), var(--accent-color-2));
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 2px 8px hsla(var(--primary-hue), 50%, 50%, 0.2);
+}
+
+[data-theme="dark"] .toggle-input-type .btn.active {
+    box-shadow: 0 2px 8px hsla(var(--primary-hue), 50%, 40%, 0.3);
+}
+
+
+/* Profil Sayfası (profil.php) */
+.profile-info h3 {
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.25rem;
+}
+
+.profile-info p.lead {
+    font-weight: 400;
+    color: var(--text-muted-color);
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+
+.form-section {
+    /* profil.php */
+    background-color: var(--form-section-input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+
+/* E-posta Doğrulama (verify-email.php) */
+.verification-code-inputs {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.verification-code-inputs input[type="text"] {
+    width: 3.5rem;
+    height: 4rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+    background-color: var(--input-bg);
+    border: 2px solid var(--input-border);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    padding-left: 0;
+    /* text-align center olduğu için padding sıfırlanmalı */
+    padding-right: 0;
+    caret-color: var(--accent-color-1);
+}
+
+.verification-code-inputs input[type="text"]:focus {
+    border-color: var(--input-focus-border);
+    box-shadow: 0 0 0 0.2rem var(--input-focus-shadow);
+    outline: none;
+    transform: scale(1.05);
+}
+
+[data-theme="dark"] .verification-code-inputs input[type="text"] {
+    caret-color: var(--accent-color-2);
+}
+
+.countdown-timer {
+    /* verify-email.php & sifreSifirla.php */
+    font-size: 0.9rem;
+    color: var(--text-muted-color);
+}
+
+.resend-code-link {
+    /* verify-email.php & sifreSifirla.php */
+    font-weight: 500;
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s ease, opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.resend-code-link:hover {
+    color: var(--link-hover-color);
+    text-decoration: underline;
+}
+
+.resend-code-link.disabled {
+    color: var(--text-muted-color);
+    pointer-events: none;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Şifremi Unuttum Bilgi Kutusu (sifremiUnuttum.php) */
+.security-info-box {
+    background-color: var(--input-bg);
+    /* Auth kartın içindeki inputlarla uyumlu */
+    border: 1px solid var(--input-border);
+    border-left: 4px solid var(--accent-color-1);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+[data-theme="dark"] .security-info-box {
+    border-left-color: var(--accent-color-2);
+}
+
+/* ==========================================================================
+   Responsive Ayarlamalar
+   ========================================================================== */
+@media (max-width: 768px) {
+
+    .auth-card,
+    .registration-card {
+        padding: 1.5rem;
+        margin: 1rem auto;
+        /* Dikeyde de boşluk */
+    }
+
+    .auth-card h2,
+    .registration-card h2 {
+        font-size: 1.6rem;
+        /* registration için 1.8rem demişti, bunu seçtim */
+    }
+
+    .content-card,
+    .article-detail-card,
+    .upload-form-card,
+    .profile-page-card {
+        padding: 1.5rem;
+    }
+
+    .article-title {
+        font-size: 1.8rem;
+    }
+
+    /* makaleDetay */
+}
+
+@media (max-width: 576px) {
+    #main-bg {
+        padding-top: 70px;
+        /* Navbar küçülürse diye */
+    }
+
+    .navbar-custom {
+        padding: 0.6rem 1rem;
+    }
+
+    .navbar-brand-custom {
+        font-size: 1.3rem;
+    }
+
+    .navbar-brand-custom img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .form-floating>.form-control,
+    .form-floating>.form-select {
+        height: calc(3.5rem + 2px);
+        padding: 1rem 0.8rem;
+    }
+
+    .form-floating>label {
+        padding: 1rem 0.8rem;
+    }
+
+    .avatar-upload {
+        /* register.php için responsive tanımı vardı */
+        width: 100px;
+        height: 100px;
+        border-width: 3px;
+    }
+
+    .avatar-edit-icon {
+        padding: 6px;
+    }
+
+    .avatar-edit-icon i {
+        font-size: 1rem;
+    }
+
+    .verification-code-inputs input[type="text"] {
+        width: 3rem;
+        height: 3.5rem;
+        font-size: 1.3rem;
+    }
+
+    .btn-action,
+    .btn-auth,
+    .btn-register,
+    .btn-action-filled {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}

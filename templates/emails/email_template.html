@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-posta Doğrulama Kodu - Scholar Mate</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            /* Üst ve alttan biraz boşluk */
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 20px;
+            /* Sadece alta padding */
+            border-bottom: 1px solid #eeeeee;
+            /* Başlık altına ayırıcı çizgi */
+            margin-bottom: 20px;
+        }
+
+        .header img {
+            /* Logo */
+            max-width: 180px;
+            /* Logonuzun boyutuna göre ayarlayın */
+            height: auto;
+        }
+
+        .content {
+            text-align: center;
+            padding: 0 15px;
+            /* İçeriğe yanlardan padding */
+        }
+
+        .content h1 {
+            color: #333333;
+            font-size: 24px;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .content p {
+            font-size: 16px;
+            color: #555555;
+            /* Biraz daha koyu renk */
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .verification-code-wrapper {
+            /* Kodu sarmalayan div */
+            margin: 25px 0;
+        }
+
+        .verification-code {
+            display: inline-block;
+            background-color: #00bfa5;
+            /* Şablondaki yeşil tonu */
+            color: #ffffff;
+            padding: 12px 25px;
+            font-size: 26px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            /* Rakamlar arası boşluk */
+            border-radius: 6px;
+            border: 1px solid #008f7a;
+            /* Hafif koyu bir border */
+        }
+
+        .note {
+            font-size: 14px;
+            color: #777777;
+            margin-top: 25px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #00bfa5;
+            /* Yeşil tonu */
+            color: #ffffff;
+            font-size: 14px;
+            border-radius: 0 0 8px 8px;
+            /* Sadece alt köşeleri yuvarla */
+            margin-top: 30px;
+        }
+
+        .footer a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer .social-links img {
+            width: 24px;
+            /* Sosyal medya ikonları */
+            margin: 10px 8px 0;
+            /* Üstten ve yanlardan boşluk */
+            opacity: 0.8;
+        }
+
+        .footer .social-links img:hover {
+            opacity: 1;
+        }
+
+        .rights {
+            font-size: 12px;
+            color: #888888;
+            /* Normal metin rengi */
+            margin-top: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <!-- Scholar Mateunuzun logosunu buraya ekleyin. URL'yi güncelleyin. -->
+            <img src="https://i.ibb.co/ymkVLNNZ/scholar-mate-Photoroom.png" alt="Scholar Mate Logo">
+        </div>
+        <div class="content">
+            <h1>E-posta Doğrulama</h1>
+            <p>Merhaba <strong>{{KULLANICI_ADI}}</strong>,</p>
+            <p>Scholar Mate hesabınızı etkinleştirmek için size gönderilen doğrulama kodunuz aşağıdadır:</p>
+
+            <div class="verification-code-wrapper">
+                <div class="verification-code">{{DOGRULAMA_KODU}}</div>
+            </div>
+
+            <p class="note">Bu kod kısa bir süre için geçerlidir. Eğer bu işlemi siz başlatmadıysanız, bu e-postayı
+                dikkate almayınız.</p>
+        </div>
+
+        <div class="footer">
+            <p>Scholar Mate'u tercih ettiğiniz için teşekkür ederiz! <span></span></p>
+            <!-- Gülen yüz emojisi değiştirdim -->
+            <p>Bu e-posta, talebiniz üzerine sistem tarafından otomatik olarak gönderilmiştir.</p>
+            <div class="social-links">
+                <!-- Gerçek sosyal medya linklerinizi ve uygun ikonları kullanın -->
+                <a href="https://facebook.com/akademikplatformunuz"><img
+                        src="https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png" alt="Facebook"></a>
+                <a href="https://x.com/akademikplatformunuz"><img
+                        src="https://img.icons8.com/ios-filled/50/ffffff/twitterx.png" alt="X (Twitter)"></a>
+                <a href="https://instagram.com/akademikplatformunuz"><img
+                        src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Instagram"></a>
+            </div>
+        </div>
+        <div class="rights">
+            <p>© {{GUNCEL_YIL}} | Scholar Mate, Tüm hakları saklıdır.</p>
+        </div>
+    </div>
+</body>
+
+</html>
