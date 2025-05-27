@@ -70,6 +70,7 @@ Bu proje, **güvenlik, performans ve kullanıcı deneyimi** ön planda tutularak
 ---
 
 ## 📁 Dosya Yapısı (Özet)
+```
 scholar-mate/
 ├── assets/
 │ ├── config/
@@ -118,7 +119,7 @@ scholar-mate/
 ├── makaleYukle.php # Yeni makale yükleme sayfası
 ├── paylasilanMakaleDetay.php # Paylaşılan makale detaylarını görüntüleme
 └── profil.php # Kullanıcı profili ve ayarlar sayfası
-
+```
 
 ## 📜 Modüller ve Sayfaların Detaylı Açıklaması
 
