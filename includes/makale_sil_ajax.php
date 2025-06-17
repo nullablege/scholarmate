@@ -1,5 +1,7 @@
 <?php
-
+ini_set('display_errors', 1);
+ini_set('log_errors', 1);
+error_reporting(E_ALL);
 
 
 session_start(); 
@@ -15,9 +17,9 @@ if (!isset($_SESSION['login'])) {
 
 
 $host = "localhost";
-$username = "root";
-$password = "";
-$db_name = "makale"; // Veritabanı adı için farklı bir değişken kullanmak daha iyi
+$username = "egeayta2_admin";
+$password = "v3j79_eQUSf2eU3";
+$db_name = "egeayta2_makale"; // Veritabanı adı için farklı bir değişken kullanmak daha iyi
 $charset = "utf8mb4"; // utf8mb4, emojiler gibi daha geniş karakter setlerini destekler
 
 // Veritabanı bağlantısı için DSN (Data Source Name)
@@ -64,6 +66,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['makale_id'])) {
     try {
         // $pdo bağlantı nesnesini kullanıyoruz
         // Yalnızca kullanıcıya ait makaleleri silmeye izin ver
+        $stmt = $pdo->prepare("DELETE FROM notlar WHERE makale_id = :id ");
+        $stmt->bindParam(':id', $makale_id, PDO::PARAM_INT);
+        $stmt->execute();
+
         $stmt = $pdo->prepare("DELETE FROM makaleler WHERE id = :id AND kullanici_id = :kullanici_id");
         $stmt->bindParam(':id', $makale_id, PDO::PARAM_INT);
         $stmt->bindParam(':kullanici_id', $kullanici_id_session, PDO::PARAM_INT); // Session'daki ID ile eşleştir
